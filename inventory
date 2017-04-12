@@ -1,0 +1,19 @@
+[local]
+localhost           ansible_connection=local
+
+[elastic_search]
+elastic-search1.internal
+
+[logstash]
+logstash1.internal
+
+[kibana]
+kibana1.internal
+
+[elk:children]
+elastic_search
+logstash
+kibana
+
+[elk:vars]
+ansible_ssh_user=ec2-user
